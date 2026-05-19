@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gallery | Sri Sathya Sai Vidya Vihar</title>
+
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-[#FFFDF4] text-gray-800">
+    <div id="header"></div>
+
+    <!-- HERO -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-[#111111] via-[#C63B2D] to-[#E8D43A] text-white mt-2"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-28 text-center relative z-10">
+        <span
+          class="bg-white/20 px-5 py-2 rounded-full backdrop-blur-md text-sm"
+        >
+          Memories & Achievements
+        </span>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold mt-8">
+          Our School Gallery
+        </h1>
+
+        <p class="max-w-2xl mx-auto mt-6 text-lg text-yellow-100 leading-8">
+          Explore the beautiful moments, celebrations, activities, and
+          achievements of our students.
+        </p>
+      </div>
+
+      <!-- SHAPES -->
+      <div
+        class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300/20 rounded-full blur-3xl"
+      ></div>
+    </section>
+
+    <!-- FILTER BUTTONS -->
+    <section class="py-14 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="flex flex-wrap justify-center gap-4">
+          <button
+            onclick="filterImages('all', event)"
+            class="filter-btn bg-[#C63B2D] text-white px-6 py-3 rounded-2xl font-semibold transition"
+          >
+            All Photos
+          </button>
+
+          <button
+            onclick="filterImages('event', event)"
+            class="filter-btn bg-[#FFF3E0] text-gray-700 px-6 py-3 rounded-2xl font-semibold hover:bg-[#C63B2D] hover:text-white transition"
+          >
+            Events
+          </button>
+
+          <button
+            onclick="filterImages('sports', event)"
+            class="filter-btn bg-[#FFF3E0] text-gray-700 px-6 py-3 rounded-2xl font-semibold hover:bg-[#C63B2D] hover:text-white transition"
+          >
+            Sports
+          </button>
+
+          <button
+            onclick="filterImages('activity', event)"
+            class="filter-btn bg-[#FFF3E0] text-gray-700 px-6 py-3 rounded-2xl font-semibold hover:bg-[#C63B2D] hover:text-white transition"
+          >
+            Activities
+          </button>
+
+          <button
+            onclick="filterImages('campus', event)"
+            class="filter-btn bg-[#FFF3E0] text-gray-700 px-6 py-3 rounded-2xl font-semibold hover:bg-[#C63B2D] hover:text-white transition"
+          >
+            Campus
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- ITEM -->
+          <div
+            class="gallery-item event group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/annual.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#C63B2D] px-4 py-1 rounded-full text-xs">
+                Event
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Annual Function</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item sports group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/sport.webp"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span
+                class="bg-[#E8D43A] text-black px-4 py-1 rounded-full text-xs"
+              >
+                Sports
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Sports Day</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item activity group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/science.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#111111] px-4 py-1 rounded-full text-xs">
+                Activity
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Science Exhibition</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item event group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/cul.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#C63B2D] px-4 py-1 rounded-full text-xs">
+                Cultural
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Cultural Program</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item activity group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/act.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#111111] px-4 py-1 rounded-full text-xs">
+                Learning
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Classroom Activity</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item campus group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/campus.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span
+                class="bg-[#E8D43A] text-black px-4 py-1 rounded-full text-xs"
+              >
+                Campus
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Beautiful Campus</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item event group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/teacher.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#C63B2D] px-4 py-1 rounded-full text-xs">
+                Celebration
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Teacher's Day</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item activity group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/tree.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span class="bg-[#111111] px-4 py-1 rounded-full text-xs">
+                Environment
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Plantation Drive</h3>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div
+            class="gallery-item sports group relative overflow-hidden rounded-[30px] shadow-xl cursor-pointer"
+            onclick="openModal(this)"
+          >
+            <img
+              src="images/students.jpg"
+              class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+              <span
+                class="bg-[#E8D43A] text-black px-4 py-1 rounded-full text-xs"
+              >
+                Team
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">Student Activities</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50 p-6"
+    >
+      <button
+        onclick="closeModal()"
+        class="absolute top-6 right-8 text-white text-4xl hover:text-[#E8D43A] transition"
+      >
+        &times;
+      </button>
+
+      <img
+        id="modalImg"
+        class="max-w-6xl w-full max-h-[90vh] object-contain rounded-3xl shadow-2xl"
+      />
+    </div>
+
+    <!-- CTA -->
+    <section
+      class="py-24 bg-gradient-to-r from-[#C63B2D] to-[#E8D43A] text-white text-center"
+    >
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-5xl font-bold leading-tight">
+          Creating Beautiful School Memories
+        </h2>
+
+        <p class="mt-6 text-lg">
+          Every picture tells a story of learning, celebration, achievement, and
+          happiness.
+        </p>
+
+        <a
+          href="contact.html"
+          class="inline-block mt-8 bg-white text-[#C63B2D] px-8 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 transition"
+        >
+          Contact Us
+        </a>
+      </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+      function filterImages(category, event) {
+        let items = document.querySelectorAll(".gallery-item");
+        let buttons = document.querySelectorAll(".filter-btn");
+
+        buttons.forEach((btn) => {
+          btn.classList.remove("bg-[#C63B2D]", "text-white");
+          btn.classList.add("bg-[#FFF3E0]", "text-gray-700");
+        });
+
+        event.target.classList.remove("bg-[#FFF3E0]", "text-gray-700");
+        event.target.classList.add("bg-[#C63B2D]", "text-white");
+
+        items.forEach((item) => {
+          if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+      function openModal(el) {
+        let img = el.querySelector("img").src;
+
+        document.getElementById("modalImg").src = img;
+
+        document.getElementById("modal").classList.remove("hidden");
+        document.getElementById("modal").classList.add("flex");
+      }
+
+      function closeModal() {
+        document.getElementById("modal").classList.add("hidden");
+        document.getElementById("modal").classList.remove("flex");
+      }
+    </script>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Modern School Header</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+<style>
+  .nav-link.active {
+    color: #C63B2D; /* yellow-400 */
+    font-weight: 700;
+    border-bottom: 2px solid #e6a014;
+    padding-bottom: 4px;
+  }
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50">
+
+  <!-- TOP BAR -->
+  <div class="bg-[#111111] text-[#FFFFFF] text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+
+      <div class="lg:flex items-center gap-5">
+        <span><i class="fa fa-phone mr-2"></i>+91 9437297366</span>
+        <span><i class="fa fa-envelope mr-2"></i>srisathyasaividyaviharbhadrak@gmail.com</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#"><i class="fab fa-facebook-f hover:text-yellow-300"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-yellow-300"></i></a>
+        <a href="#"><i class="fab fa-youtube hover:text-yellow-300"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN NAVBAR -->
+  <div class="bg-white shadow-lg">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- LOGO -->
+      <div class="flex items-center gap-3">
+
+        <div class="h-14 w-14 rounded-xl bg-gradient-to-br from-yellow-700 to-indigo-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+          <img src="images/logo.png"/>
+        </div>
+
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">
+            Sri Sathya Sai Vidya Vihar
+          </h1>
+
+          <p class="text-sm text-gray-500">
+            Learn • Grow • Lead
+          </p>
+        </div>
+
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-gray-700">
+
+        <a href="index.html" class="nav-link hover:text-[#C63B2D] transition">Home</a>
+
+        <a href="about.html" class="nav-link hover:text-[#C63B2D] transition">About</a>
+
+        <a href="academic.html" class="nav-link hover:text-[#C63B2D] transition">
+          Academics
+        </a>
+
+        <a href="admission.html" class="nav-link hover:text-[#C63B2D] transition">
+          Admission
+        </a>
+
+        <a href="mandatory-disclosure.html"
+        class="nav-link hover:text-[#C63B2D] transition">
+          Mandatory Disclosure
+        </a>
+
+        <a href="gallery.html" class="nav-link hover:text-[#C63B2D] transition">
+          Gallery
+        </a>
+
+        <a href="contact.html" class="nav-link hover:text-[#C63B2D] transition">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- RIGHT BUTTON -->
+      <div class="hidden lg:flex items-center gap-4">
+
+        <button class="h-10 w-10 rounded-full border border-gray-300 hover:bg-blue-50">
+          <i class="fa fa-search text-gray-600"></i>
+        </button>
+
+        <a href="#"
+        class="bg-gradient-to-br from-[#C63B2D] via-[#D84A35] to-[#E8D43A] text-white px-6 py-3 rounded-full shadow-lg transition duration-300">
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- MOBILE BUTTON -->
+      <button onclick="openMenu()" class="lg:hidden text-2xl text-gray-700">
+        <i class="fa fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu"
+class="fixed top-0 right-0 w-72 h-100 bg-white shadow-lg p-6 transform translate-x-full transition duration-300 z-50">
+
+  <div class="p-6 border-b flex justify-between items-center">
+
+    <h2 class="text-xl font-bold text-blue-800">
+      Menu
+    </h2>
+
+    <button onclick="closeMenu()" class="text-3xl">
+      &times;
+    </button>
+
+  </div>
+
+  <nav class="flex flex-col p-6 gap-5 text-gray-700 font-medium">
+
+    <a href="index.html" class="hover:text-blue-700">Home</a>
+
+    <a href="about.html" class="hover:text-blue-700">About</a>
+
+    <a href="academic.html" class="hover:text-blue-700">Academics</a>
+
+    <a href="admission.html" class="hover:text-blue-700">Admission</a>
+
+    <a href="mandatory-disclosure.html" class="hover:text-blue-700">
+      Mandatory Disclosure
+    </a>
+
+    <a href="gallery.html" class="hover:text-blue-700">Gallery</a>
+
+    <a href="contact.html" class="hover:text-blue-700">Contact</a>
+
+    <a href="#"
+    class="bg-gradient-to-br from-[#C63B2D] via-[#D84A35] to-[#E8D43A] text-white text-center py-3 rounded-xl mt-4">
+      Apply Now
+    </a>
+
+  </nav>
+
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay"
+class="fixed inset-0 bg-black/50 hidden z-40"
+onclick="closeMenu()"></div>
+
+<!-- SCRIPT -->
+<script>
+
+function openMenu() {
+  document.getElementById("mobileMenu")
+    .classList.remove("-translate-x-full");
+
+  document.getElementById("overlay")
+    .classList.remove("hidden");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu")
+    .classList.add("-translate-x-full");
+
+  document.getElementById("overlay")
+    .classList.add("hidden");
+}
+
+</script>
+
+</body>
+</html>
